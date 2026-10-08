@@ -7,23 +7,23 @@
   "ioValues": [
     {
       "name": "height",
-      "ioValue": 10
+      "ioValue": 4
     },
     {
       "name": "width",
-      "ioValue": 10,
-      "currentEquation": "10"
+      "ioValue": 10
     },
     {
       "name": "depth",
-      "ioValue": 10
+      "ioValue": 6,
+      "currentEquation": "6"
     }
   ],
   "topLevel": true,
   "allAtoms": [
     {
       "atomType": "Extrude",
-      "x": 0.3,
+      "x": 0.5,
       "y": 0.4,
       "uniqueID": "id-12",
       "ioValues": [
@@ -33,33 +33,33 @@
         },
         {
           "name": "height",
-          "ioValue": 10,
+          "ioValue": 4,
           "currentEquation": "height"
         }
       ]
     },
     {
       "atomType": "Rectangle",
-      "x": 0.1,
-      "y": 0.9,
+      "x": 0.2,
+      "y": 0.7,
       "uniqueID": "id-16",
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 8,
+          "ioValue": 9.5,
           "currentEquation": "width  - 2 * WallThickness"
         },
         {
           "name": "y length",
-          "ioValue": 8,
+          "ioValue": 5.5,
           "currentEquation": "depth  - 2 * WallThickness"
         }
       ]
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.5,
-      "y": 0.7,
+      "x": 0.7,
+      "y": 0.9,
       "uniqueID": "id-162",
       "name": "Fillet_SidesOnly",
       "ioValues": [
@@ -69,7 +69,8 @@
         },
         {
           "name": "Fillet",
-          "ioValue": 1
+          "ioValue": 0.125,
+          "currentEquation": "0.125"
         }
       ],
       "topLevel": false,
@@ -98,7 +99,7 @@
             },
             {
               "name": "fillet",
-              "ioValue": 1
+              "ioValue": 0.125
             }
           ],
           "interpreterVersion": 0,
@@ -106,8 +107,8 @@
         },
         {
           "atomType": "Input",
-          "x": 0,
-          "y": 0.2,
+          "x": 0.1,
+          "y": 0.3,
           "uniqueID": "id-158",
           "name": "InputShape",
           "type": "geometry",
@@ -147,8 +148,8 @@
         },
         {
           "atomType": "Input",
-          "x": 0,
-          "y": 0.2,
+          "x": 0.1,
+          "y": 0.5,
           "uniqueID": "id-161",
           "name": "Fillet",
           "options": []
@@ -210,7 +211,7 @@
     },
     {
       "atomType": "Extrude",
-      "x": 0.2,
+      "x": 0.4,
       "y": 0.7,
       "uniqueID": "id-17",
       "ioValues": [
@@ -220,7 +221,7 @@
         },
         {
           "name": "height",
-          "ioValue": 10,
+          "ioValue": 4,
           "currentEquation": "height"
         }
       ]
@@ -239,7 +240,7 @@
     },
     {
       "atomType": "Difference",
-      "x": 0.4,
+      "x": 0.6,
       "y": 0.6,
       "uniqueID": "id-24",
       "ioValues": [
@@ -255,8 +256,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.3,
-      "y": 0.8,
+      "x": 0.5,
+      "y": 0.9,
       "uniqueID": "id-28",
       "ioValues": [
         {
@@ -273,31 +274,31 @@
         },
         {
           "name": "zDist",
-          "ioValue": 1,
+          "ioValue": 0.25,
           "currentEquation": "WallThickness"
         }
       ]
     },
     {
       "atomType": "Input",
-      "x": 0,
-      "y": 0.5,
+      "x": 0.1,
+      "y": 0.3,
       "uniqueID": "id-34",
       "name": "height",
       "options": []
     },
     {
       "atomType": "Input",
-      "x": 0,
-      "y": 0.3,
+      "x": 0.1,
+      "y": 0.5,
       "uniqueID": "id-37",
       "name": "width",
       "options": []
     },
     {
       "atomType": "Rectangle",
-      "x": 0.1,
-      "y": 0.5,
+      "x": 0.3,
+      "y": 0.3,
       "uniqueID": "id-4",
       "ioValues": [
         {
@@ -307,14 +308,14 @@
         },
         {
           "name": "y length",
-          "ioValue": 10,
+          "ioValue": 6,
           "currentEquation": "depth"
         }
       ]
     },
     {
       "atomType": "Input",
-      "x": 0,
+      "x": 0.1,
       "y": 0.7,
       "uniqueID": "id-40",
       "name": "depth",
@@ -322,16 +323,16 @@
     },
     {
       "atomType": "Constant",
-      "x": 0.1,
+      "x": 0.5,
       "y": 0.2,
       "uniqueID": "id-43",
       "name": "WallThickness",
-      "value": 1
+      "value": 0.25
     },
     {
       "atomType": "Export",
-      "x": 0.5,
-      "y": 0.4,
+      "x": 0.8,
+      "y": 0.2,
       "uniqueID": "id-45",
       "ioValues": [
         {
@@ -375,6 +376,11 @@
       "ap2ID": "id-17"
     },
     {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-162",
+      "ap2ID": "id-2"
+    },
+    {
       "ap2Name": "geometry",
       "ap1ID": "id-162",
       "ap2ID": "id-45"
@@ -388,11 +394,6 @@
       "ap2Name": "InputShape",
       "ap1ID": "id-24",
       "ap2ID": "id-162"
-    },
-    {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-24",
-      "ap2ID": "id-2"
     },
     {
       "ap2Name": "remove",
