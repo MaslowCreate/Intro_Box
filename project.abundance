@@ -9,8 +9,40 @@
     {
       "atomType": "Extrude",
       "x": 0.3,
-      "y": 0.6,
+      "y": 0.4,
       "uniqueID": "id-12",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": 10
+        }
+      ]
+    },
+    {
+      "atomType": "Rectangle",
+      "x": 0.1,
+      "y": 0.6,
+      "uniqueID": "id-16",
+      "ioValues": [
+        {
+          "name": "x length",
+          "ioValue": 9
+        },
+        {
+          "name": "y length",
+          "ioValue": 14
+        }
+      ]
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.2,
+      "y": 0.7,
+      "uniqueID": "id-17",
       "ioValues": [
         {
           "name": "geometry",
@@ -35,6 +67,22 @@
       ]
     },
     {
+      "atomType": "Difference",
+      "x": 0.4,
+      "y": 0.6,
+      "uniqueID": "id-24",
+      "ioValues": [
+        {
+          "name": "retain",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "remove",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
       "atomType": "Rectangle",
       "x": 0.1,
       "y": 0.4,
@@ -51,7 +99,28 @@
       ]
     }
   ],
-  "allConnectors": [],
+  "allConnectors": [
+    {
+      "ap2Name": "retain",
+      "ap1ID": "id-12",
+      "ap2ID": "id-24"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-16",
+      "ap2ID": "id-17"
+    },
+    {
+      "ap2Name": "remove",
+      "ap1ID": "id-17",
+      "ap2ID": "id-24"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-4",
+      "ap2ID": "id-12"
+    }
+  ],
   "unitsKey": "Inches",
   "fileTypeVersion": 1,
   "filetypeVersion": 1
