@@ -83,6 +83,31 @@
       ]
     },
     {
+      "atomType": "Move",
+      "x": 0.3,
+      "y": 0.8,
+      "uniqueID": "id-28",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 1,
+          "currentEquation": "1"
+        }
+      ]
+    },
+    {
       "atomType": "Rectangle",
       "x": 0.1,
       "y": 0.4,
@@ -111,8 +136,13 @@
       "ap2ID": "id-17"
     },
     {
-      "ap2Name": "remove",
+      "ap2Name": "geometry",
       "ap1ID": "id-17",
+      "ap2ID": "id-28"
+    },
+    {
+      "ap2Name": "remove",
+      "ap1ID": "id-28",
       "ap2ID": "id-24"
     },
     {
