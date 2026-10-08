@@ -4,6 +4,20 @@
   "y": 0,
   "uniqueID": "id-1",
   "name": "Intro_Stool_Project",
+  "ioValues": [
+    {
+      "name": "height",
+      "ioValue": 10
+    },
+    {
+      "name": "width",
+      "ioValue": 10
+    },
+    {
+      "name": "depth",
+      "ioValue": 10
+    }
+  ],
   "topLevel": true,
   "allAtoms": [
     {
@@ -108,6 +122,22 @@
       ]
     },
     {
+      "atomType": "Input",
+      "x": 0,
+      "y": 0.5,
+      "uniqueID": "id-34",
+      "name": "height",
+      "options": []
+    },
+    {
+      "atomType": "Input",
+      "x": 0,
+      "y": 0.3,
+      "uniqueID": "id-37",
+      "name": "width",
+      "options": []
+    },
+    {
       "atomType": "Rectangle",
       "x": 0.1,
       "y": 0.4,
@@ -119,9 +149,26 @@
         },
         {
           "name": "y length",
-          "ioValue": 15
+          "ioValue": 10,
+          "currentEquation": "height"
         }
       ]
+    },
+    {
+      "atomType": "Input",
+      "x": 0,
+      "y": 0.7,
+      "uniqueID": "id-40",
+      "name": "depth",
+      "options": []
+    },
+    {
+      "atomType": "Constant",
+      "x": 0.1,
+      "y": 0.2,
+      "uniqueID": "id-43",
+      "name": "WallThickness",
+      "value": 1
     }
   ],
   "allConnectors": [
@@ -144,6 +191,11 @@
       "ap2Name": "remove",
       "ap1ID": "id-28",
       "ap2ID": "id-24"
+    },
+    {
+      "ap2Name": "x length",
+      "ap1ID": "id-37",
+      "ap2ID": "id-4"
     },
     {
       "ap2Name": "geometry",
