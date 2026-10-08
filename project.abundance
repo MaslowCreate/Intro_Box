@@ -44,11 +44,13 @@
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 9
+          "ioValue": 10,
+          "currentEquation": "width"
         },
         {
           "name": "y length",
-          "ioValue": 14
+          "ioValue": 10,
+          "currentEquation": "depth"
         }
       ]
     },
