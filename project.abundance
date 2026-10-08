@@ -11,7 +11,8 @@
     },
     {
       "name": "width",
-      "ioValue": 10
+      "ioValue": 10,
+      "currentEquation": "10"
     },
     {
       "name": "depth",
@@ -32,27 +33,180 @@
         },
         {
           "name": "height",
-          "ioValue": 10
+          "ioValue": 10,
+          "currentEquation": "height"
         }
       ]
     },
     {
       "atomType": "Rectangle",
       "x": 0.1,
-      "y": 0.6,
+      "y": 0.9,
       "uniqueID": "id-16",
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 10,
-          "currentEquation": "width"
+          "ioValue": 8,
+          "currentEquation": "width  - 2 * WallThickness"
         },
         {
           "name": "y length",
-          "ioValue": 10,
-          "currentEquation": "depth"
+          "ioValue": 8,
+          "currentEquation": "depth  - 2 * WallThickness"
         }
       ]
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.5,
+      "y": 0.7,
+      "uniqueID": "id-162",
+      "name": "Fillet_SidesOnly",
+      "ioValues": [
+        {
+          "name": "InputShape",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Fillet",
+          "ioValue": 1
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 1,
+          "y": 0.5,
+          "uniqueID": "id-156",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Code",
+          "x": 0.5,
+          "y": 0.5,
+          "uniqueID": "id-157",
+          "ioValues": [
+            {
+              "name": "shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "fillet",
+              "ioValue": 1
+            }
+          ],
+          "interpreterVersion": 0,
+          "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"fillet\", type: \"number\", defaultValue: 1 },\n];\n\nlet importedShape = library[shape]\nlet newPlane = replicad.makePlane()\n\nif (fillet > 0){\n  \nlet filletedCyl = importedShape.geometry[0].fillet(fillet, (e) => e.inDirection([0, 0, 1]));\n return {\n  geometry: [filletedCyl],\n  dimension: \"3D\",\n  tags: [\"createdShape\"],\n  color: '#A3CE5B',\n  plane: newPlane,\n  bom: [],\n}\n}\nelse{\n  return {\n  geometry: [importedShape],\n  dimension: \"3D\",\n  tags: [\"createdShape\"],\n  color: '#A3CE5B',\n  plane: newPlane,\n  bom: [],\n}\n  \n}\n"
+        },
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.2,
+          "uniqueID": "id-158",
+          "name": "InputShape",
+          "type": "geometry",
+          "options": []
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.1,
+          "y": 0.7,
+          "uniqueID": "id-159",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 10
+            },
+            {
+              "name": "y length",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.2,
+          "y": 0.8,
+          "uniqueID": "id-160",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.2,
+          "uniqueID": "id-161",
+          "name": "Fillet",
+          "options": []
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-157",
+          "ap2ID": "id-156"
+        },
+        {
+          "ap2Name": "shape",
+          "ap1ID": "id-158",
+          "ap2ID": "id-157"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-159",
+          "ap2ID": "id-160"
+        },
+        {
+          "ap2Name": "fillet",
+          "ap1ID": "id-161",
+          "ap2ID": "id-157"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-10-08T18:23:39.127Z",
+        "privateRepo": false,
+        "repoName": "Fillet_SidesOnly",
+        "dateCreated": "2026-02-22T22:54:42Z",
+        "likes": 0,
+        "pngURL": "https://raw.githubusercontent.com/alzatin/Fillet_SidesOnly/master/project.png?sanitize=true",
+        "readme": "https://raw.githubusercontent.com/alzatin/Fillet_SidesOnly/master/README.md?sanitize=true",
+        "yyyy": 2026,
+        "topMoleculeID": "",
+        "userRanking": 0,
+        "userSetAsThumbnail": false,
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/alzatin/Fillet_SidesOnly",
+        "topics": [
+          "abundance-tool"
+        ],
+        "pullRequests": [],
+        "forks": 0,
+        "dateModified": "2026-03-26T16:32:32Z",
+        "ranking": 2,
+        "searchField": "fillet_sidesonly alzatin fillets sides of an extrusion abundance-tool",
+        "owner": "alzatin",
+        "description": "Fillets sides of an extrusion",
+        "contentURL": "https://raw.githubusercontent.com/alzatin/Fillet_SidesOnly/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/alzatin/Fillet_SidesOnly/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "MM",
+      "fileTypeVersion": 1,
+      "lastReloadedFromGithubAt": 1791499057961
     },
     {
       "atomType": "Extrude",
@@ -66,7 +220,8 @@
         },
         {
           "name": "height",
-          "ioValue": 10
+          "ioValue": 10,
+          "currentEquation": "height"
         }
       ]
     },
@@ -119,7 +274,7 @@
         {
           "name": "zDist",
           "ioValue": 1,
-          "currentEquation": "1"
+          "currentEquation": "WallThickness"
         }
       ]
     },
@@ -142,17 +297,18 @@
     {
       "atomType": "Rectangle",
       "x": 0.1,
-      "y": 0.4,
+      "y": 0.5,
       "uniqueID": "id-4",
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 10
+          "ioValue": 10,
+          "currentEquation": "width"
         },
         {
           "name": "y length",
           "ioValue": 10,
-          "currentEquation": "height"
+          "currentEquation": "depth"
         }
       ]
     },
@@ -171,6 +327,40 @@
       "uniqueID": "id-43",
       "name": "WallThickness",
       "value": 1
+    },
+    {
+      "atomType": "Export",
+      "x": 0.5,
+      "y": 0.4,
+      "uniqueID": "id-45",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "File Type",
+          "ioValue": "STEP",
+          "currentEquation": "STEP"
+        },
+        {
+          "name": "Resolution (dpi)",
+          "ioValue": 96
+        },
+        {
+          "name": "STL Tolerance",
+          "ioValue": 0.002
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "Simple_Box",
+          "currentEquation": "Simple_Box"
+        }
+      ],
+      "type": null,
+      "resolution": 96,
+      "importIndex": 0,
+      "partName": "Simple_Box"
     }
   ],
   "allConnectors": [
@@ -186,8 +376,23 @@
     },
     {
       "ap2Name": "geometry",
+      "ap1ID": "id-162",
+      "ap2ID": "id-45"
+    },
+    {
+      "ap2Name": "geometry",
       "ap1ID": "id-17",
       "ap2ID": "id-28"
+    },
+    {
+      "ap2Name": "InputShape",
+      "ap1ID": "id-24",
+      "ap2ID": "id-162"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-24",
+      "ap2ID": "id-2"
     },
     {
       "ap2Name": "remove",
